@@ -13,16 +13,41 @@
             let randomNum = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
             let compChoice;
             if (randomNum === 1) {
-                compChoice = "Rock";
+                compChoice = "rock";
             } else if (randomNum === 2) {
-                compChoice = "Paper";
+                compChoice = "paper";
             } else {
-                compChoice = "Scissors"
+                compChoice = "scissors"
             }
             return compChoice;
             
-        }
-        console.log(getComputerChoice());
+        };
+        let playerSelection = prompt("Make your choice! ").toLowerCase();
+        let computerSelection = getComputerChoice();
+        function playRound(playerSelection, computerSelection) {
+            let result;
+            if (playerSelection === "rock" && computerSelection === "scissors") {
+                result = "You won! Rock beats Scissors."
+            } else if (playerSelection === "rock" && computerSelection === "paper") {
+                result = "You lose! Paper beats Rock."
+            } else if (playerSelection === "scissors" && computerSelection === "paper") {
+                result = "You won! Scissors beats Paper."
+            } else if (playerSelection === "scissors" && computerSelection === "rock") {
+                result = "You lose! Rock beats Scissors." 
+            } else if (playerSelection === "paper" && computerSelection === "rock") {
+                result = "You won! Paper beats rock."
+            } else if (playerSelection === "paper" & computerSelection === "scissors") {
+                result = "You lose! Scissors beats Paper."
+            } else if (playerSelection === computerSelection) {
+                result = "It's a tie! Try one more time."
+            } else {
+                result = "Incorrect input. Please choose Rock, Paper or Scissors."
+            }
+            return result;
+            
+          
+        }; 
+        console.log(playRound(playerSelection, computerSelection))  ;
     </script>
 </body>
 </html>
