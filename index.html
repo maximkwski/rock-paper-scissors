@@ -23,16 +23,10 @@
             
         };
 
-        
-        // let computerSelection = getComputerChoice();
-
         let score = {
             comment: "", playerPoints: [], computerPoints: []
         }
         
-        // let comment;
-        // let playerPoints = [];
-        // let computerPoints = [];
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === "rock" && computerSelection === "scissors") {
                 score.comment = "You won! Rock beats Scissors.";
@@ -57,22 +51,18 @@
             } else {
                 score.comment = "Incorrect input. Please choose Rock, Paper or Scissors."
             }
-            return score;
-            
-          
+            return score;          
         }; 
-        // console.log(playRound(prompt("Make your choice! ").toLowerCase(), computerSelection));
-        // console.log(score.playerPoints.length);
-        // console.log(score.computerPoints.length);
+
         
         function game() {
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++) {
                 playRound(prompt("Make your choice! ").toLowerCase(), getComputerChoice());
                 console.log(score.playerPoints.length);
                 console.log(score.computerPoints.length);
-                console.log(score.comment)
-            
+                console.log(score.comment)   
             };
+            
             if (score.playerPoints.length > score.computerPoints.length) {
                 return "You won!"
             } else if (score.playerPoints.length < score.computerPoints.length) {
