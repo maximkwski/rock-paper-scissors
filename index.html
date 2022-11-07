@@ -37,16 +37,19 @@
         rock.addEventListener('click', () => {
           playRound('rock', getComputerChoice());
           results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+          game();
         });
 
         paper.addEventListener('click', () => {
             playRound('paper', getComputerChoice());
             results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+            game();
         });
 
         scissors.addEventListener('click', () => {
             playRound('scissors', getComputerChoice());
             results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+            game();
         });
        
 
@@ -95,23 +98,15 @@
         }; 
 
         
-        // function game() {
-        //     for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++) {
-        //         playRound(prompt("Make your choice! ").toLowerCase(), getComputerChoice());
-        //         console.log(score.playerPoints.length);
-        //         console.log(score.computerPoints.length);
-        //         console.log(score.comment)   
-        //     };
-            
-        //     if (score.playerPoints.length > score.computerPoints.length) {
-        //         return "You won!"
-        //     } else if (score.playerPoints.length < score.computerPoints.length) {
-        //         return "You loose!"
-        //     } else {
-        //         return "Nobody wins lol"
-        //     }
-        // };
-        // console.log(game());
+        function game() {
+            // for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++)
+                if (score.playerPoints.length === 5 ) {
+                    console.log("You won!")
+                }
+                else if (score.computerPoints.length === 5) {
+                    console.log("You loose!")
+                } 
+        }; 
     </script>
 </body>
 </html>
