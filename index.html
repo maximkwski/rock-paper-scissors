@@ -4,11 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <h1>Test:</h1>
+    <h1>Rock Paper Scissors</h1>
+
+    <div id="results"></div>
+
+    <ul class="selections">
+        <li id="rock" value="rock">rock</li>
+        <li id="paper" value="paper">paper</li>
+        <li id="scissors" value="scissors">scissors</li>
+    </ul>
+    
+
+
+
+
+
     <script>
+        const rock = document.getElementById('rock');
+        const paper = document.getElementById('paper');
+        const scissors = document.getElementById('scissors');
+
+        let results = document.getElementById('results');
+
+        let score = {
+            comment: "", playerPoints: [], computerPoints: []
+        }
+       
+        rock.addEventListener('click', () => {
+          playRound('rock', getComputerChoice());
+          results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+        });
+
+        paper.addEventListener('click', () => {
+            playRound('paper', getComputerChoice());
+            results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+        });
+
+        scissors.addEventListener('click', () => {
+            playRound('scissors', getComputerChoice());
+            results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+        });
+       
+
+       
+
+
         function getComputerChoice() {
             let randomNum = Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
             let compChoice;
@@ -21,11 +65,7 @@
             }
             return compChoice;
             
-        };
-
-        let score = {
-            comment: "", playerPoints: [], computerPoints: []
-        }
+        }; 
         
         function playRound(playerSelection, computerSelection) {
             if (playerSelection === "rock" && computerSelection === "scissors") {
@@ -55,23 +95,23 @@
         }; 
 
         
-        function game() {
-            for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++) {
-                playRound(prompt("Make your choice! ").toLowerCase(), getComputerChoice());
-                console.log(score.playerPoints.length);
-                console.log(score.computerPoints.length);
-                console.log(score.comment)   
-            };
+        // function game() {
+        //     for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++) {
+        //         playRound(prompt("Make your choice! ").toLowerCase(), getComputerChoice());
+        //         console.log(score.playerPoints.length);
+        //         console.log(score.computerPoints.length);
+        //         console.log(score.comment)   
+        //     };
             
-            if (score.playerPoints.length > score.computerPoints.length) {
-                return "You won!"
-            } else if (score.playerPoints.length < score.computerPoints.length) {
-                return "You loose!"
-            } else {
-                return "Nobody wins lol"
-            }
-        };
-        console.log(game());
+        //     if (score.playerPoints.length > score.computerPoints.length) {
+        //         return "You won!"
+        //     } else if (score.playerPoints.length < score.computerPoints.length) {
+        //         return "You loose!"
+        //     } else {
+        //         return "Nobody wins lol"
+        //     }
+        // };
+        // console.log(game());
     </script>
 </body>
 </html>
