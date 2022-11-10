@@ -1,6 +1,7 @@
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
+const btn = document.getElementById('btn');
 
 let results = document.getElementById('results');
 let finalresult = document.getElementById('finalresult');
@@ -76,9 +77,29 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     // for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++)
         if (score.playerPoints.length === 5 ) {
-            finalresult.innerHTML = "You win the game!"
+            finalresult.innerHTML = "You win the game!";
+            btn.style.display = "block";
+            btn.addEventListener('click', () => {
+                resetGame();
+            });
+           
+            
         }
         else if (score.computerPoints.length === 5) {
             finalresult.innerHTML = "You loose the game!"
+            btn.style.display = "block";
+            btn.addEventListener('click', () => {
+                resetGame();
+            });
         };
 };
+
+function resetGame() {
+    score = {
+        comment: "", playerPoints: [], computerPoints: []
+    };
+    results.innerHTML = "";
+    finalresult.innerHTML = "";
+    console.log(score)
+    btn.style.display = "none";
+}
