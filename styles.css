@@ -1,8 +1,62 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #F6FFD0;
+}
+
+@font-face {
+    font-family: header-font;
+    src: url(Yellowtail-Regular.ttf);
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-transform: uppercase;
+  
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-family: header-font;
+}
+
+#results, #current-score, #finalresult, .btn {
+    height: 20px;
+    
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+}
+
 .selections li{
    border: 2px solid black;
-   margin: 2px;
-   width: 200px;
+   border-radius: 100px;
+   padding: 22px;
+   width: 120px;
+   height: 120px;
+   cursor: pointer;
 }
+
+img {
+    width: 120px;
+}
+
 
 #btn {
     display: none;

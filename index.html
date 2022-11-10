@@ -10,19 +10,32 @@
 </head>
 <body>
     <h1>Rock Paper Scissors</h1>
+    
+    <div class="container">
+        <div class="game">
+            
+            <div id="results"></div>
+            <div id="current-score"></div>
 
-    <div id="results"></div>
-    <div id="current-score"></div>
+            <ul class="selections">
+                <li id="rock" alt="rock">
+                    <img src="./img/rock.png">
+                </li>
+                <li id="paper" alt="paper">
+                    <img src="./img/toilet-paper.png">
+                </li>
+                <li id="scissors" alt="scissors">
+                    <img src="./img/scissors.png">
+                </li>
+            </ul>
 
-    <ul class="selections">
-        <li id="rock" value="rock">rock</li>
-        <li id="paper" value="paper">paper</li>
-        <li id="scissors" value="scissors">scissors</li>
-    </ul>
+            <div id="finalresult"></div>
 
-    <div id="finalresult"></div>
-
-    <button id="btn">Reset</button>
+            <div class="btn">
+                <button id="btn">Reset</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
