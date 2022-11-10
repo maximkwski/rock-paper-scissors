@@ -4,6 +4,7 @@ const scissors = document.getElementById('scissors');
 const btn = document.getElementById('btn');
 
 let results = document.getElementById('results');
+let currentScore = document.getElementById('current-score')
 let finalresult = document.getElementById('finalresult');
 
 let score = {
@@ -12,19 +13,22 @@ let score = {
 
 rock.addEventListener('click', () => {
   playRound('rock', getComputerChoice());
-  results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+  results.innerHTML = `${score.comment}`;
+  currentScore.innerHTML = `${score.playerPoints.length} - ${score.computerPoints.length}`;
   game();
 });
 
 paper.addEventListener('click', () => {
     playRound('paper', getComputerChoice());
-    results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+    results.innerHTML = `${score.comment}`
+    currentScore.innerHTML = `${score.playerPoints.length} - ${score.computerPoints.length}`;
     game();
 });
 
 scissors.addEventListener('click', () => {
     playRound('scissors', getComputerChoice());
-    results.innerHTML = `${score.comment} ${score.playerPoints.length} - ${score.computerPoints.length}`
+    results.innerHTML = `${score.comment}`;
+    currentScore.innerHTML = `${score.playerPoints.length} - ${score.computerPoints.length}`;
     game();
 });
 
@@ -99,7 +103,8 @@ function resetGame() {
         comment: "", playerPoints: [], computerPoints: []
     };
     results.innerHTML = "";
+    currentScore.innerHTML = "";
     finalresult.innerHTML = "";
-    console.log(score)
+    console.log(score);
     btn.style.display = "none";
 }
