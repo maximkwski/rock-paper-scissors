@@ -83,3 +83,19 @@ img {
     border: 1px solid lightblue;
     
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 8px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer img {
+    width: 20px;
+}
