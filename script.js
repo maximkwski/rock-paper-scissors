@@ -81,7 +81,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     // for (let i = 0; (score.playerPoints.length < 5) && (score.computerPoints.length < 5); i++)
         if (score.playerPoints.length === 5 ) {
-            finalresult.innerHTML = "You win the game!";
+            finalresult.innerHTML = "You won the game!";
             btn.style.display = "block";
             btn.addEventListener('click', () => {
                 resetGame();
